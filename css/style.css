@@ -1,0 +1,55 @@
+ol.a {
+  list-style-type: upper-roman;
+}
+ol.b {
+  list-style-type: lower-alpha;
+}
+ul.d {
+  list-style-type: disc;
+}
+ol.a{
+  counter-reset: section;
+}
+ol.a li {
+  counter-increment: section;
+}
+ol.a li:before{
+  content: " "counter(section)"";
+}
+ol.b{
+    counter-reset: nested;
+}
+ol.b li {
+  counter-increment: nested;
+}
+ol.b li:after {
+  content: " " counter(section) "." counter(nested) " ";
+}
+ol.c{
+    counter-reset: nested;
+}
+ol.c li {
+  counter-increment: nested;
+}
+ol.c li:after {
+  content: " " counter(section) "." counter(nested) " ";
+}
+ul.d{
+    counter-reset: nested;
+}
+ul.d li {
+  counter-increment: nested;
+}
+ul.d li:after {
+  content: " " counter(section) "." counter(nested) " ";
+}
+.text{
+    color: black;
+}
+.container{
+    color: #6B9163;
+    padding: 20px 20px;
+}
+.container .left{
+    padding-left: 20px;
+}
